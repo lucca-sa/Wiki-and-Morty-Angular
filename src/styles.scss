@@ -1,1 +1,37 @@
-/* You can add global styles to this file, and also import other style files */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    margin-top: 4rem;
+}
+
+.card {
+    box-shadow: 0 1px 3px rgba(0,0,0,.12), 0 1px 2px rgba(0,0,0,.24);
+    transition: all .2 ease-in-out;
+    margin: 10px 0;
+    background-color: #ffffff;
+    max-width: 529px;
+    
+
+    &hover {
+        box-shadow: 0 5px 5px rgba(0,0,0,.19), 0 6px 6px rgba(0,0,0,.24);
+        cursor: pointer;
+    }
+
+    img{
+        opacity: .7;
+        width: 100%;
+        transition: opacity .7;
+
+        &:hover {
+            opacity: 1;
+        }
+    }
+
+    .card-inner {
+        padding: 10px;
+    }
+}
