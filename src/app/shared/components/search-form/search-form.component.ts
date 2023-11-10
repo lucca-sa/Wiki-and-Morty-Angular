@@ -19,13 +19,8 @@ export class SearchFormComponent {
   constructor(private router: Router) {}
 
   onSearch(value: string) {
-    if (value && value.length > 3) {
-      this.router.navigate([
-        '/character-list',
-        {
-          queryParams: { q: value },
-        },
-      ]);
-    }
+    this.router.navigate(['/character-list'], {
+      queryParams: { q: value },
+    });
   }
 }
