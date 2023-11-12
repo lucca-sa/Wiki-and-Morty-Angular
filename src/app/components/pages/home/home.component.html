@@ -1,1 +1,21 @@
-<app-character-list></app-character-list>
+<div class="container">
+  <div class="card character-list-card">
+    <div class="image">
+      <a [routerLink]="['/character-list']">
+        <img
+          src="../../../../assets/images/characters.jpg"
+          alt="Characters"
+          class="card-img-top"
+        />
+      </a>
+    </div>
+    <div class="card-inner">
+      <div class="header">
+        <a [routerLink]="['/character-list']">
+          <h2>Character List</h2>
+        </a>
+        <h4 class="text-muted">See all characters</h4>
+      </div>
+    </div>
+  </div>
+</div>

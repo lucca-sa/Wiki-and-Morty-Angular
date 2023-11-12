@@ -100,4 +100,8 @@ export class CharacterListComponent {
         this.info = info;
       });
   }
+
+  onGoBack(): void {
+    this.router.navigate(['/']);
+  }
 }

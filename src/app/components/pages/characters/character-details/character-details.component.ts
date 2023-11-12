@@ -1,6 +1,5 @@
-import { Location } from '@angular/common';
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 import { take } from 'rxjs';
 import { Observable } from 'rxjs';
@@ -18,7 +17,7 @@ export class CharacterDetailsComponent {
   constructor(
     private route: ActivatedRoute,
     private characterService: CharacterService,
-    private location: Location
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -29,6 +28,6 @@ export class CharacterDetailsComponent {
   }
 
   onGoBack(): void {
-    this.location.back();
+    this.router.navigate(['/character-list']);
   }
 }

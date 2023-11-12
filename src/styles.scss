@@ -15,29 +15,44 @@
     background-color: #ffffff;
     max-width: 529px;
     
+    img {
+        width: 100%;
+    }
 
     &hover {
         box-shadow: 0 5px 5px rgba(0,0,0,.19), 0 6px 6px rgba(0,0,0,.24);
         cursor: pointer;
     }
 
-    img{
-        opacity: .7;
-        width: 100%;
-        transition: opacity .7;
-
-        &:hover {
-            opacity: 1;
-        }
-    }
 
     .card-inner {
         padding: 10px;
     }
 }
 
+.card-img-top {
+    opacity: .7;
+        transition: opacity .7;
+
+        &:hover {
+            opacity: 1;
+        }
+}
+
+
+.card a {
+    text-decoration: none;
+}
+
 .no-hidden{
     position: fixed;
     bottom: 10px;
     right: 10px;
+}
+
+
+.back-btn {
+    position: fixed;
+    top: 70px;
+    left: 20px;   
 }
