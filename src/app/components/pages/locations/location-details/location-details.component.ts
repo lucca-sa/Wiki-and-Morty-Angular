@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
+import { Location as AngularLocation } from '@angular/common';
 
 import { take } from 'rxjs';
 import { Observable } from 'rxjs';
@@ -17,7 +18,7 @@ export class LocationDetailsComponent {
   constructor(
     private route: ActivatedRoute,
     private locationService: LocationService,
-    private router: Router
+    private angularLocation: AngularLocation
   ) {}
 
   ngOnInit(): void {
@@ -28,6 +29,6 @@ export class LocationDetailsComponent {
   }
 
   onGoBack(): void {
-    this.router.navigate(['/location-list']);
+    this.angularLocation.back();
   }
 }

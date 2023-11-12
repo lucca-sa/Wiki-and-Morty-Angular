@@ -4,8 +4,12 @@
     box-sizing: border-box;
 }
 
+body, html {
+    background-color: #272b33;
+}
+
 .container {
-    margin-top: 4rem;
+    margin-top: 60px;
 }
 
 .card {
@@ -14,6 +18,9 @@
     margin: 10px 0;
     background-color: #ffffff;
     max-width: 529px;
+    border: none;
+    background-color: #3c3e44;
+    
     
     img {
         width: 100%;
@@ -27,6 +34,13 @@
 
     .card-inner {
         padding: 10px;
+        background-color: #3c3e44;
+        border-radius: 5px;
+        
+    }
+
+    .header {
+        color: #ffffff;
     }
 }
 

@@ -21,8 +21,8 @@ import { Character } from 'src/app/shared/Interfaces/character.interface';
         >
           <h2>{{ character.name | slice : 0 : 20 }}</h2>
         </a>
-        <h4 class="text-muted">Species: {{ character.species }}</h4>
-        <h4 class="text-muted">Status: {{ character.status }}</h4>
+        <h4>Status: {{ character.status | titlecase }}</h4>
+        <h4>Species: {{ character.species | titlecase }}</h4>
       </div>
     </div>
   </div>`,

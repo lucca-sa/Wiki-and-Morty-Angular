@@ -1,9 +1,10 @@
 .container {
     padding-top: 20px;
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
-    gap: 30px;
+    height: calc(100vh - 60px);
+    
 }
 
 .card {

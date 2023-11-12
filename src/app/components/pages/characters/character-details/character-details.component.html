@@ -7,23 +7,53 @@
       <i class="bi bi-arrow-left-short"></i>
       Back
     </button>
-    <div class="card card-details mt-5">
+
+    <div class="card card-details">
       <div class="image">
         <img [src]="character.image" [alt]="character.name" />
       </div>
 
       <div class="header">
-        <h2 class="mb-5 text-info text-center">
-          {{ character.name | slice : 0 : 15 }}
+        <h2 class="text-info">
+          {{ character.name | slice : 0 : 20 }}
         </h2>
 
-        <h4 class="mb-4 text-muted">Species: {{ character.species }}</h4>
-        <h4 class="mb-4 text-muted">Gender: {{ character.gender }}</h4>
-        <h4 class="mb-4 text-muted">Status: {{ character.status }}</h4>
-        <h4 class="mb-4 text-muted">Origin: {{ character.origin.name }}</h4>
-        <h4 class="text-muted">
-          Last known location: {{ character.location.name }}
+        <h4 class="mb-5 status-species">
+          <span
+            class="status-circle"
+            [ngClass]="getStatusCircleClass(character.status)"
+          ></span>
+          {{ character.status | titlecase }} -
+          {{ character.species | titlecase }}
         </h4>
+        <div class="details">
+          <h4 class="mb-4">
+            Gender: <br />
+            <span>{{ character.gender | titlecase }}</span>
+          </h4>
+          <a
+            [routerLink]="[
+              '/location-details',
+              extrairNumeroDoLink(character.origin.url)
+            ]"
+          >
+            <h4 class="mb-4">
+              Origin: <br />
+              <span> {{ character.origin.name | titlecase }} </span>
+            </h4>
+          </a>
+          <a
+            [routerLink]="[
+              '/location-details',
+              extrairNumeroDoLink(character.location.url)
+            ]"
+          >
+            <h4>
+              Last known location: <br />
+              <span>{{ character.location.name | titlecase }}</span>
+            </h4>
+          </a>
+        </div>
       </div>
     </div>
   </div>

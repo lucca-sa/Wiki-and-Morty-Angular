@@ -2,7 +2,7 @@
   <i class="bi bi-arrow-left-short"></i>
   Back
 </button>
-<!-- <app-search-form></app-search-form> -->
+<app-location-search-form></app-location-search-form>
 <div
   infinite-scroll
   (scrolled)="onScrollDown()"
@@ -19,8 +19,8 @@
           >
             <h2>{{ location.name | slice : 0 : 20 }}</h2>
           </a>
-          <h4 class="text-muted">Type: {{ location.type }}</h4>
-          <h4 class="text-muted">Dimension: {{ location.dimension }}</h4>
+          <h4>Type: {{ location.type }}</h4>
+          <h4>Dimension: {{ location.dimension }}</h4>
         </div>
       </div>
     </div>

@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-search-form',
+  selector: 'app-character-search-form',
   template: `
     <input
       type="text"
@@ -15,7 +15,7 @@ import { Router } from '@angular/router';
   `,
   styles: ['input {width:100%;}'],
 })
-export class SearchFormComponent {
+export class CharacterSearchFormComponent {
   constructor(private router: Router) {}
 
   onSearch(value: string) {

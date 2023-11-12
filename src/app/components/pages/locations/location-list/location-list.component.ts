@@ -37,13 +37,12 @@ export class LocationListComponent {
     private locationService: LocationService,
     private route: ActivatedRoute,
     private router: Router
-  ) {
-    // this.onUrlChange();
-  }
+  ) {}
 
   ngOnInit(): void {
     this.route.queryParamMap.subscribe((params: ParamMap) => {
       this.query = params.get('q') || '';
+      this.onUrlChange();
       this.getDataFromService();
     });
   }
@@ -94,8 +93,10 @@ export class LocationListComponent {
       .searchLocations(this.query, this.pageNum)
       .pipe(take(1))
       .subscribe((res: any) => {
-        console.log('response ->', res);
         const { info, results } = res;
+        if (this.pageNum === 1) {
+          this.locations = [];
+        }
         this.locations = [...this.locations, ...results];
         this.info = info;
       });

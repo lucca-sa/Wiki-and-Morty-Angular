@@ -37,13 +37,12 @@ export class CharacterListComponent {
     private characterService: CharacterService,
     private route: ActivatedRoute,
     private router: Router
-  ) {
-    this.onUrlChange();
-  }
+  ) {}
 
   ngOnInit(): void {
     this.route.queryParamMap.subscribe((params: ParamMap) => {
       this.query = params.get('q') || '';
+      this.onUrlChange();
       this.getDataFromService();
     });
   }
@@ -94,8 +93,10 @@ export class CharacterListComponent {
       .searchCharacters(this.query, this.pageNum)
       .pipe(take(1))
       .subscribe((res: any) => {
-        console.log('response ->', res);
         const { info, results } = res;
+        if (this.pageNum === 1) {
+          this.characters = [];
+        }
         this.characters = [...this.characters, ...results];
         this.info = info;
       });
