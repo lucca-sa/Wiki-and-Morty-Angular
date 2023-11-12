@@ -1,3 +1,15 @@
 .container {
     padding-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.card {
+    max-width: 450px;
+}
+
+img {
+    max-height: 500px;
 }

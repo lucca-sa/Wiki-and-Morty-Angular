@@ -7,11 +7,13 @@ import { CharacterListComponent } from './character-list/character-list.componen
 import { CharacterComponent } from './character.component';
 
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+import { SearchFormComponent } from 'src/app/shared/components/search-form/search-form.component';
 
 const characterComponents = [
   CharacterDetailsComponent,
   CharacterListComponent,
   CharacterComponent,
+  SearchFormComponent,
 ];
 
 @NgModule({

@@ -2,29 +2,29 @@
   class="row justify-content-center mt-3"
   *ngIf="character$ | async as character"
 >
-  <div class="col-xs-12 col-sm-6 col-md-6">
-    <div class="card">
+  <div class="wrapper">
+    <button (click)="onGoBack()" class="back-btn btn btn-primary btn-lg mt-3">
+      <i class="bi bi-arrow-left-short"></i>
+      Back
+    </button>
+    <div class="card card-details mt-5">
       <div class="image">
         <img [src]="character.image" [alt]="character.name" />
       </div>
-      <div class="card-inner">
-        <div class="header">
-          <h2 class="text-info">{{ character.name | slice : 0 : 15 }}</h2>
 
-          <h4 class="text-muted">Species: {{ character.species }}</h4>
-          <h4 class="text-muted">Gender: {{ character.gender }}</h4>
-          <h4 class="text-muted">Status: {{ character.status }}</h4>
-          <h4 class="text-muted">Origin: {{ character.origin.name }}</h4>
-          <h4 class="text-muted">
-            Last known location: {{ character.location.name }}
-          </h4>
-        </div>
+      <div class="header">
+        <h2 class="mb-5 text-info text-center">
+          {{ character.name | slice : 0 : 15 }}
+        </h2>
+
+        <h4 class="mb-4 text-muted">Species: {{ character.species }}</h4>
+        <h4 class="mb-4 text-muted">Gender: {{ character.gender }}</h4>
+        <h4 class="mb-4 text-muted">Status: {{ character.status }}</h4>
+        <h4 class="mb-4 text-muted">Origin: {{ character.origin.name }}</h4>
+        <h4 class="text-muted">
+          Last known location: {{ character.location.name }}
+        </h4>
       </div>
     </div>
   </div>
 </div>
-
-<button (click)="onGoBack()" class="back-btn btn btn-primary btn-lg mt-3">
-  <i class="bi bi-arrow-left-short"></i>
-  Back
-</button>

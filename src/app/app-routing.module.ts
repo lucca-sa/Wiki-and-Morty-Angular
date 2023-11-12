@@ -26,6 +26,14 @@ const routes: Routes = [
         './components/pages/characters/character-details/character-details.module'
       ).then((m) => m.CharacterDetailsModule),
   },
+  {
+    path: 'location-list',
+    loadChildren: () =>
+      import(
+        './components/pages/locations/location-list/location-list.module'
+      ).then((m) => m.LocationListModule),
+  },
+  { path: 'location-details', loadChildren: () => import('./components/pages/locations/location-details/location-details.module').then(m => m.LocationDetailsModule) },
 ];
 
 @NgModule({

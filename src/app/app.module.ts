@@ -8,7 +8,7 @@ import { HeaderComponent } from './shared/components/header/header.component';
 import { SearchFormComponent } from './shared/components/search-form/search-form.component';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, SearchFormComponent],
+  declarations: [AppComponent, HeaderComponent],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],

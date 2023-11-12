@@ -1,1 +1,33 @@
+.card-details {
+    display: flex;
+    flex-direction: row;
+    max-width: 10000px;
+    width: 800px;
+    height: 400px;
 
+    img {
+        height: 100%;
+        width: auto;
+        border-radius: 5px;
+    }
+}
+
+.image {
+    padding: 1px;
+}
+
+.header {
+    width: 500px;
+    padding: 10px;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.back-btn {
+    align-self: flex-start;
+}
