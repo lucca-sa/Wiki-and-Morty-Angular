@@ -27,6 +27,7 @@ export class CharacterListComponent {
     next: null,
   };
   showGoUpButton = false;
+  thisPage = 'character';
   private pageNum = 1;
   private query!: string;
   private hideScrollHeight = 200;
@@ -104,5 +105,16 @@ export class CharacterListComponent {
 
   onGoBack(): void {
     this.router.navigate(['/']);
+  }
+
+  getStatusCircleClass(status: string): string {
+    switch (status) {
+      case 'Dead':
+        return 'status-dead';
+      case 'Alive':
+        return 'status-alive';
+      default:
+        return 'status-unknown';
+    }
   }
 }

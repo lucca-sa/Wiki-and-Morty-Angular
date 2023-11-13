@@ -27,6 +27,7 @@ export class LocationListComponent {
     next: null,
   };
   showGoUpButton = false;
+  thisPage = 'location';
   private pageNum = 1;
   private query!: string;
   private hideScrollHeight = 200;

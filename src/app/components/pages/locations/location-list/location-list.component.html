@@ -2,11 +2,11 @@
   <i class="bi bi-arrow-left-short"></i>
   Back
 </button>
-<app-location-search-form></app-location-search-form>
+<app-search-form [thisPage]="thisPage"></app-search-form>
 <div
   infinite-scroll
   (scrolled)="onScrollDown()"
-  class="row"
+  class="row mt-2"
   *ngIf="locations.length > 0; else notFound"
 >
   <div class="col-xs-12 col-sm-6 col-md-4" *ngFor="let location of locations">
@@ -17,10 +17,16 @@
             class="text-info"
             [routerLink]="['/location-details', location.id]"
           >
-            <h2>{{ location.name | slice : 0 : 20 }}</h2>
+            <h2>{{ location.name }}</h2>
           </a>
-          <h4>Type: {{ location.type }}</h4>
-          <h4>Dimension: {{ location.dimension }}</h4>
+          <h4>
+            Type: <br />
+            <span> {{ location.type | titlecase }}</span>
+          </h4>
+          <!-- <h4>
+            Dimension: <br />
+            <span> {{ location.dimension | titlecase }}</span>
+          </h4> -->
         </div>
       </div>
     </div>
@@ -28,7 +34,7 @@
 </div>
 <ng-template #notFound
   ><div class="col-xs-12 col-sm-12 col-md-12 mt-5 container-notFound">
-    <p>No results...</p>
+    <p class="no-results">No results...</p>
   </div>
 </ng-template>
 <button
@@ -37,5 +43,6 @@
   class="btn btn-dark"
   (click)="onScrollUp()"
 >
+  <i class="bi bi-arrow-up-circle"></i>
   Go UP
 </button>

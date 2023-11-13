@@ -1,68 +1,66 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-body, html {
-    background-color: #272b33;
+body,
+html {
+  background-color: #272b33;
 }
 
 .container {
-    margin-top: 60px;
+  margin-top: 60px;
 }
 
 .card {
-    box-shadow: 0 1px 3px rgba(0,0,0,.12), 0 1px 2px rgba(0,0,0,.24);
-    transition: all .2 ease-in-out;
-    margin: 10px 0;
-    background-color: #ffffff;
-    max-width: 529px;
-    border: none;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.2 ease-in-out;
+  margin: 10px 0;
+  background-color: #ffffff;
+  max-width: 529px;
+  border: none;
+  background-color: #3c3e44;
+
+  img {
+    width: 100%;
+  }
+
+  &hover {
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.24);
+    cursor: pointer;
+  }
+
+  .card-inner {
+    padding: 10px;
     background-color: #3c3e44;
-    
-    
-    img {
-        width: 100%;
-    }
+    border-radius: 5px;
+  }
 
-    &hover {
-        box-shadow: 0 5px 5px rgba(0,0,0,.19), 0 6px 6px rgba(0,0,0,.24);
-        cursor: pointer;
-    }
-
-
-    .card-inner {
-        padding: 10px;
-        background-color: #3c3e44;
-        border-radius: 5px;
-        
-    }
-
-    .header {
-        color: #ffffff;
-    }
+  .header {
+    color: #ffffff;
+  }
 }
 
 .card-img-top {
-    opacity: .7;
-        transition: opacity .7;
+  opacity: 0.7;
+  transition: opacity 0.7;
 
-        &:hover {
-            opacity: 1;
-        }
+  &:hover {
+    opacity: 1;
+  }
 }
 
+.no-results {
+  color: #ffffff;
+}
 
 .card a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
-.no-hidden{
-    position: fixed;
-    bottom: 10px;
-    right: 10px;
+.no-hidden {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
 }
-
-
-

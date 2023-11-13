@@ -2,7 +2,7 @@
   <i class="bi bi-arrow-left-short"></i>
   Back
 </button>
-<app-character-search-form></app-character-search-form>
+<app-search-form [thisPage]="thisPage"></app-search-form>
 <div
   infinite-scroll
   (scrolled)="onScrollDown()"
@@ -10,12 +10,46 @@
   *ngIf="characters.length > 0; else notFound"
 >
   <div class="col-xs-12 col-sm-6 col-md-4" *ngFor="let character of characters">
-    <app-character [character]="character"></app-character>
+    <div class="card card-details">
+      <div class="image">
+        <a [routerLink]="['/character-details', character.id]">
+          <img
+            [src]="character.image"
+            [alt]="character.name"
+            class="card-img-top"
+          />
+        </a>
+      </div>
+      <div class="card-inner">
+        <div class="header">
+          <a
+            class="text-info"
+            [routerLink]="['/character-details', character.id]"
+          >
+            <h2>{{ character.name | slice : 0 : 25 }}</h2>
+          </a>
+          <h4>
+            Status: <br />
+            <div class="status">
+              <span
+                class="status-circle"
+                [ngClass]="getStatusCircleClass(character.status)"
+              ></span>
+              <span> {{ character.status | titlecase }}</span>
+            </div>
+          </h4>
+          <h4>
+            Species: <br />
+            <span>{{ character.species | titlecase }}</span>
+          </h4>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 <ng-template #notFound
   ><div class="col-xs-12 col-sm-12 col-md-12 mt-5 container-notFound">
-    <p>No results...</p>
+    <p class="no-results">No results...</p>
   </div>
 </ng-template>
 <button
@@ -24,5 +58,6 @@
   class="btn btn-dark"
   (click)="onScrollUp()"
 >
+  <i class="bi bi-arrow-up-circle"></i>
   Go UP
 </button>

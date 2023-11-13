@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Location as AngularLocation } from '@angular/common';
 
 import { take } from 'rxjs';
 import { Observable } from 'rxjs';
@@ -18,8 +17,7 @@ export class CharacterDetailsComponent {
   constructor(
     private route: ActivatedRoute,
     private characterService: CharacterService,
-    private router: Router,
-    private angularLocation: AngularLocation
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -41,7 +39,7 @@ export class CharacterDetailsComponent {
   }
 
   onGoBack(): void {
-    this.angularLocation.back();
+    this.router.navigate(['/character-list']);
   }
 
   extrairNumeroDoLink(link: string): number | null {

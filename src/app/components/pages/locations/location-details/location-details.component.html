@@ -7,14 +7,23 @@
       <i class="bi bi-arrow-left-short"></i>
       Back
     </button>
-    <div class="card card-details mt-5">
+
+    <div class="card card-details">
       <div class="header">
-        <h2 class="mb-5 text-info text-center">
-          {{ location.name | slice : 0 : 15 }}
+        <h2 class="text-info text-center mb-4">
+          {{ location.name }}
         </h2>
 
-        <h4 class="mb-4">Species: {{ location.dimension }}</h4>
-        <h4 class="mb-4">Gender: {{ location.type }}</h4>
+        <div class="details">
+          <h4 class="mb-4">
+            Type: <br />
+            <span>{{ location.type | titlecase }}</span>
+          </h4>
+          <h4 class="mb-4 text-end">
+            Dimension: <br />
+            <span>{{ location.dimension | titlecase }} </span>
+          </h4>
+        </div>
       </div>
     </div>
   </div>
