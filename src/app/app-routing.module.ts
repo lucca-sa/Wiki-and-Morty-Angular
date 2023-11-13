@@ -45,6 +45,20 @@ const routes: Routes = [
         './components/pages/locations/location-details/location-details.module'
       ).then((m) => m.LocationDetailsModule),
   },
+  {
+    path: 'login',
+    loadChildren: () =>
+      import('./components/pages/login/login.module').then(
+        (m) => m.LoginModule
+      ),
+  },
+  {
+    path: 'signup',
+    loadChildren: () =>
+      import('./components/pages/signup/signup.module').then(
+        (m) => m.SignupModule
+      ),
+  },
 ];
 
 @NgModule({

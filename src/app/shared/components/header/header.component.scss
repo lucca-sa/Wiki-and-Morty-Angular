@@ -1,11 +1,32 @@
-a:hover {
-    opacity: .8;
+.active:hover {
+  opacity: 0.8;
 }
 
-a:active {
-    opacity: .6;
+.active:active {
+  opacity: 0.6;
+}
+
+.secundary-link:active {
+  color: aliceblue;
 }
 
 nav {
-    height: 60px;
+  height: 60px;
+
+  .navbar-collapse {
+    background-color: #212529;
+    margin-top: 5px;
+    padding-left: 10px;
+    border-radius: 10px;
+
+    li {
+      border-bottom: 1px solid #3c3e44;
+    }
+  }
+}
+
+@media screen and (max-width: 230px) {
+  .navbar-toggler {
+    display: none;
+  }
 }

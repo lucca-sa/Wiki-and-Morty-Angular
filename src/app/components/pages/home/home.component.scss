@@ -1,16 +1,23 @@
-.container {
+.wrapper {
+  flex-direction: column;
+}
+
+@media screen and (min-width: 465px) {
+  .wrapper {
     padding-top: 20px;
     display: flex;
-    justify-content: space-evenly;
+    flex-direction: row;
+    justify-content: center;
+    gap: 30px;
     align-items: center;
     height: calc(100vh - 60px);
-    
-}
+  }
 
-.card {
+  .card {
     max-width: 450px;
-}
+  }
 
-img {
+  img {
     max-height: 500px;
+  }
 }
