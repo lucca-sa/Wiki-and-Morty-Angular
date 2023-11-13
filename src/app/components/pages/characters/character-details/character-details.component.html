@@ -15,16 +15,16 @@
           {{ character.name | slice : 0 : 25 }}
         </h2>
 
-        <h4 class="mb-5 status-species">
+        <h3 class="status-species">
           <span class="status-circle" [ngClass]="getStatusCircleClass(character.status)"></span>
           {{ character.status | titlecase }} -
           {{ character.species | titlecase }}
-        </h4>
+        </h3>
 
 
         <div class="details">
 
-          <h4 class="mb-4">
+          <h4 class="gender">
             Gender: <br />
             <span>{{ character.gender | titlecase }}</span>
           </h4>
@@ -33,13 +33,13 @@
               '/location-details',
               extrairNumeroDoLink(character.origin.url)
             ]">
-            <h4 class="mb-4">
+            <h4>
               Origin: <br />
               <span> {{ character.origin.name | titlecase }} </span>
             </h4>
           </a>
 
-          <h4 *ngIf="character.origin.name === 'unknown'" class="mb-4">
+          <h4 *ngIf="character.origin.name === 'unknown'">
             Origin: <br />
             <span>Unknown</span>
           </h4>
