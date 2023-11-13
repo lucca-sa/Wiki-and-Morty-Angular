@@ -1,0 +1,48 @@
+<button (click)="onGoBack()" class="back-btn btn btn-primary btn-lg mt-3 mb-2">
+  <i class="bi bi-arrow-left-short"></i>
+  Back
+</button>
+<app-search-form [thisPage]="thisPage"></app-search-form>
+<div
+  infinite-scroll
+  (scrolled)="onScrollDown()"
+  class="row mt-2"
+  *ngIf="locations.length > 0; else notFound"
+>
+  <div class="col-xs-12 col-sm-6 col-md-4" *ngFor="let location of locations">
+    <div class="card">
+      <div class="card-inner">
+        <div class="header">
+          <a
+            class="text-info"
+            [routerLink]="['/location-details', location.id]"
+          >
+            <h2>{{ location.name }}</h2>
+          </a>
+          <h4>
+            Type: <br />
+            <span> {{ location.type | titlecase }}</span>
+          </h4>
+          <!-- <h4>
+            Dimension: <br />
+            <span> {{ location.dimension | titlecase }}</span>
+          </h4> -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<ng-template #notFound
+  ><div class="col-xs-12 col-sm-12 col-md-12 mt-5 container-notFound">
+    <p class="no-results">No results...</p>
+  </div>
+</ng-template>
+<button
+  [ngClass]="'no-hidden'"
+  *ngIf="showGoUpButton"
+  class="btn btn-dark"
+  (click)="onScrollUp()"
+>
+  <i class="bi bi-arrow-up-circle"></i>
+  Go UP
+</button>

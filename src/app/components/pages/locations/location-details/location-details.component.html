@@ -1,0 +1,30 @@
+<div
+  class="row justify-content-center mt-3"
+  *ngIf="location$ | async as location"
+>
+  <div class="wrapper">
+    <button (click)="onGoBack()" class="back-btn btn btn-primary btn-lg mt-3">
+      <i class="bi bi-arrow-left-short"></i>
+      Back
+    </button>
+
+    <div class="card card-details">
+      <div class="header">
+        <h2 class="text-info text-center mb-4">
+          {{ location.name }}
+        </h2>
+
+        <div class="details">
+          <h4 class="mb-4">
+            Type: <br />
+            <span>{{ location.type | titlecase }}</span>
+          </h4>
+          <h4 class="mb-4 text-end">
+            Dimension: <br />
+            <span>{{ location.dimension | titlecase }} </span>
+          </h4>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

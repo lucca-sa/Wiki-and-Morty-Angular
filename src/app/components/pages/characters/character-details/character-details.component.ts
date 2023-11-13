@@ -1,6 +1,5 @@
-import { Location } from '@angular/common';
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 import { take } from 'rxjs';
 import { Observable } from 'rxjs';
@@ -18,7 +17,7 @@ export class CharacterDetailsComponent {
   constructor(
     private route: ActivatedRoute,
     private characterService: CharacterService,
-    private location: Location
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -28,7 +27,30 @@ export class CharacterDetailsComponent {
     });
   }
 
+  getStatusCircleClass(status: string): string {
+    switch (status) {
+      case 'Dead':
+        return 'status-dead';
+      case 'Alive':
+        return 'status-alive';
+      default:
+        return 'status-unknown';
+    }
+  }
+
   onGoBack(): void {
-    this.location.back();
+    this.router.navigate(['/character-list']);
+  }
+
+  extrairNumeroDoLink(link: string): number | null {
+    const partesDoLink: string[] = link.split('/');
+    const numero: string = partesDoLink[partesDoLink.length - 1];
+    const numeroExtraido: number = parseInt(numero, 10);
+
+    if (!isNaN(numeroExtraido)) {
+      return numeroExtraido;
+    } else {
+      return null;
+    }
   }
 }

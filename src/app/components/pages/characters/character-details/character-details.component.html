@@ -2,25 +2,59 @@
   class="row justify-content-center mt-3"
   *ngIf="character$ | async as character"
 >
-  <div class="col-xs-12 col-sm-6 col-md-6">
-    <div class="card">
-      <div class="image">
-        <img
-          [src]="character.image"
-          [alt]="character.name"
-          class="card-img-top"
-        />
-      </div>
-      <div class="card-inner">
-        <div class="header">
-          <h2>{{ character.name | slice : 0 : 15 }}</h2>
+  <div class="wrapper">
+    <button (click)="onGoBack()" class="back-btn btn btn-primary btn-lg mt-3">
+      <i class="bi bi-arrow-left-short"></i>
+      Back
+    </button>
 
-          <h4 class="text-muted">Gender: {{ character.gender }}</h4>
-          <small class="text-muted">Status: {{ character.status }}</small>
+    <div class="card card-details">
+      <div class="image">
+        <img [src]="character.image" [alt]="character.name" />
+      </div>
+
+      <div class="header">
+        <h2 class="text-info">
+          {{ character.name | slice : 0 : 20 }}
+        </h2>
+
+        <h4 class="mb-5 status-species">
+          <span
+            class="status-circle"
+            [ngClass]="getStatusCircleClass(character.status)"
+          ></span>
+          {{ character.status | titlecase }} -
+          {{ character.species | titlecase }}
+        </h4>
+        <div class="details">
+          <h4 class="mb-4">
+            Gender: <br />
+            <span>{{ character.gender | titlecase }}</span>
+          </h4>
+          <a
+            [routerLink]="[
+              '/location-details',
+              extrairNumeroDoLink(character.origin.url)
+            ]"
+          >
+            <h4 class="mb-4">
+              Origin: <br />
+              <span> {{ character.origin.name | titlecase }} </span>
+            </h4>
+          </a>
+          <a
+            [routerLink]="[
+              '/location-details',
+              extrairNumeroDoLink(character.location.url)
+            ]"
+          >
+            <h4>
+              Last known location: <br />
+              <span>{{ character.location.name | titlecase }}</span>
+            </h4>
+          </a>
         </div>
       </div>
     </div>
   </div>
 </div>
-
-<button (click)="onGoBack()" class="btn btn-primary btn-lg mt-3">Back</button>

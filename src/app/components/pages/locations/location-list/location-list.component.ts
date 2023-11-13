@@ -7,8 +7,8 @@ import {
 } from '@angular/router';
 import { DOCUMENT } from '@angular/common';
 
-import { Character } from 'src/app/shared/Interfaces/character.interface';
-import { CharacterService } from 'src/app/shared/services/character.service';
+import { Location } from 'src/app/shared/Interfaces/location.interface';
+import { LocationService } from 'src/app/shared/services/location.service';
 import { filter, take } from 'rxjs';
 
 type RequestInfo = {
@@ -16,18 +16,18 @@ type RequestInfo = {
 };
 
 @Component({
-  selector: 'app-character-list',
-  templateUrl: './character-list.component.html',
-  styleUrls: ['./character-list.component.scss'],
+  selector: 'app-location-list',
+  templateUrl: './location-list.component.html',
+  styleUrls: ['./location-list.component.scss'],
 })
-export class CharacterListComponent {
-  characters: Character[] = [];
+export class LocationListComponent {
+  locations: Location[] = [];
 
   info: RequestInfo = {
     next: null,
   };
   showGoUpButton = false;
-  thisPage = 'character';
+  thisPage = 'location';
   private pageNum = 1;
   private query!: string;
   private hideScrollHeight = 200;
@@ -35,7 +35,7 @@ export class CharacterListComponent {
 
   constructor(
     @Inject(DOCUMENT) private document: Document,
-    private characterService: CharacterService,
+    private locationService: LocationService,
     private route: ActivatedRoute,
     private router: Router
   ) {}
@@ -83,38 +83,27 @@ export class CharacterListComponent {
     this.router.events
       .pipe(filter((event) => event instanceof NavigationEnd))
       .subscribe(() => {
-        this.characters = [];
+        this.locations = [];
         this.pageNum = 1;
         this.getDataFromService();
       });
   }
 
   private getDataFromService(): void {
-    this.characterService
-      .searchCharacters(this.query, this.pageNum)
+    this.locationService
+      .searchLocations(this.query, this.pageNum)
       .pipe(take(1))
       .subscribe((res: any) => {
         const { info, results } = res;
         if (this.pageNum === 1) {
-          this.characters = [];
+          this.locations = [];
         }
-        this.characters = [...this.characters, ...results];
+        this.locations = [...this.locations, ...results];
         this.info = info;
       });
   }
 
   onGoBack(): void {
     this.router.navigate(['/']);
-  }
-
-  getStatusCircleClass(status: string): string {
-    switch (status) {
-      case 'Dead':
-        return 'status-dead';
-      case 'Alive':
-        return 'status-alive';
-      default:
-        return 'status-unknown';
-    }
   }
 }

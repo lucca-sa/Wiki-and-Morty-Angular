@@ -1,0 +1,16 @@
+.container {
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: calc(100vh - 60px);
+    
+}
+
+.card {
+    max-width: 450px;
+}
+
+img {
+    max-height: 500px;
+}

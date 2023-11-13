@@ -1,1 +1,40 @@
-<app-character-list></app-character-list>
+<div class="container">
+  <div class="card character-list-card">
+    <div class="image">
+      <a [routerLink]="['/character-list']">
+        <img
+          src="../../../../assets/images/characters.jpg"
+          alt="Characters"
+          class="card-img-top"
+        />
+      </a>
+    </div>
+    <div class="card-inner">
+      <div class="header">
+        <a class="text-info" [routerLink]="['/character-list']">
+          <h2>Character List</h2>
+        </a>
+        <h4>See all characters</h4>
+      </div>
+    </div>
+  </div>
+  <div class="card location-list-card">
+    <div class="image">
+      <a [routerLink]="['/location-list']">
+        <img
+          src="../../../../assets/images/locations.jpg"
+          alt="Characters"
+          class="card-img-top"
+        />
+      </a>
+    </div>
+    <div class="card-inner">
+      <div class="header">
+        <a class="text-info" [routerLink]="['/location-list']">
+          <h2>Location List</h2>
+        </a>
+        <h4>See all locations</h4>
+      </div>
+    </div>
+  </div>
+</div>
