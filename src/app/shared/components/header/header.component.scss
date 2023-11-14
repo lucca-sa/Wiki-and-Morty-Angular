@@ -1,11 +1,57 @@
-a:hover {
-    opacity: .8;
+#userbar-text {
+  color: #ffffff;
+  margin-top: 15px;
 }
 
-a:active {
-    opacity: .6;
+.logo {
+  width: 150px;
+}
+
+span {
+  font-weight: bold;
+  color: #0DCAF0;
+}
+
+.bi-box-arrow-left {
+  margin-right: 5px;
+}
+
+.active:hover {
+  opacity: 0.8;
+}
+
+.active:active {
+  opacity: 0.6;
+}
+
+.secundary-link:active {
+  color: aliceblue;
 }
 
 nav {
-    height: 60px;
+  height: 60px;
+
+  .navbar-collapse {
+    background-color: #212529;
+    margin-top: 5px;
+    padding-left: 10px;
+    border-radius: 10px;
+
+    li {
+      border-bottom: 1px solid #3c3e44;
+    }
+  }
+}
+
+.userbar {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+
+}
+
+@media screen and (max-width: 230px) {
+  .navbar-toggler {
+    display: none;
+  }
 }

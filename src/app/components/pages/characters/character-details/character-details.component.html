@@ -1,7 +1,5 @@
-<div
-  class="row justify-content-center mt-3"
-  *ngIf="character$ | async as character"
->
+<app-header></app-header>
+<div class="row justify-content-center mt-3" *ngIf="character$ | async as character">
   <div class="wrapper">
     <button (click)="onGoBack()" class="back-btn btn btn-primary btn-lg mt-3">
       <i class="bi bi-arrow-left-short"></i>
@@ -15,44 +13,53 @@
 
       <div class="header">
         <h2 class="text-info">
-          {{ character.name | slice : 0 : 20 }}
+          {{ character.name | slice : 0 : 25 }}
         </h2>
 
-        <h4 class="mb-5 status-species">
-          <span
-            class="status-circle"
-            [ngClass]="getStatusCircleClass(character.status)"
-          ></span>
+        <h3 class="status-species">
+          <span class="status-circle" [ngClass]="getStatusCircleClass(character.status)"></span>
           {{ character.status | titlecase }} -
           {{ character.species | titlecase }}
-        </h4>
+        </h3>
+
+
         <div class="details">
-          <h4 class="mb-4">
+
+          <h4 class="gender">
             Gender: <br />
             <span>{{ character.gender | titlecase }}</span>
           </h4>
-          <a
-            [routerLink]="[
+
+          <a *ngIf="character.origin.name !== 'unknown'" [routerLink]="[
               '/location-details',
               extrairNumeroDoLink(character.origin.url)
-            ]"
-          >
-            <h4 class="mb-4">
+            ]">
+            <h4>
               Origin: <br />
               <span> {{ character.origin.name | titlecase }} </span>
             </h4>
           </a>
-          <a
-            [routerLink]="[
+
+          <h4 *ngIf="character.origin.name === 'unknown'">
+            Origin: <br />
+            <span>Unknown</span>
+          </h4>
+
+          <a *ngIf="character.location.name !== 'unknown'" [routerLink]="[
               '/location-details',
               extrairNumeroDoLink(character.location.url)
-            ]"
-          >
+            ]">
             <h4>
               Last known location: <br />
               <span>{{ character.location.name | titlecase }}</span>
             </h4>
           </a>
+
+          <h4 *ngIf="character.location.name === 'unknown'">
+            Last known location: <br />
+            <span>Unknown</span>
+          </h4>
+
         </div>
       </div>
     </div>

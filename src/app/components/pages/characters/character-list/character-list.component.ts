@@ -104,7 +104,7 @@ export class CharacterListComponent {
   }
 
   onGoBack(): void {
-    this.router.navigate(['/']);
+    this.router.navigate(['/home']);
   }
 
   getStatusCircleClass(status: string): string {

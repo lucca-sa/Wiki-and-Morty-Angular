@@ -1,0 +1,27 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+
+
+
+
+    .logo {
+        max-width: 400px;
+        width: 50%;
+    }
+
+    .portal-img {
+        max-width: 360px;
+        width: 50%;
+        margin-bottom: 40px;
+    }
+
+    button {
+        position: fixed;
+        bottom: 80px;
+    }
+}

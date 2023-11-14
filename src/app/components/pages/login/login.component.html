@@ -1,0 +1,44 @@
+<app-background-video></app-background-video>
+<div class="container">
+    <div class="card">
+        <div class="text-center mb-4">
+            <h2>Login</h2>
+            <h6>Please enter your email and password!</h6>
+        </div>
+
+        <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+            <div class="mb-3">
+                <label for="username-input" class="form-label">Username:</label>
+                <input formControlName="username" type="text" class="form-control" id="username-input">
+                <div *ngIf="formControls['username'].hasError('required') && (formControls['username'].dirty || formControls['username'].touched)"
+                    class="text-danger">
+                    <p>Username is required.</p>
+                </div>
+                <div *ngIf="formControls['username'].hasError('minlength') && (formControls['username'].dirty || formControls['username'].touched)"
+                    class="text-danger">
+                    <p>Username must be at least 3 characters.</p>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="password-input" class="form-label">Password:</label>
+                <input formControlName="password" type="password" class="form-control" id="password-input">
+                <div *ngIf="formControls['password'].hasError('required') && (formControls['password'].dirty || formControls['password'].touched)"
+                    class="text-danger">
+                    <p>Password is required.</p>
+                </div>
+                <div *ngIf="formControls['password'].hasError('minlength') && (formControls['password'].dirty || formControls['password'].touched)"
+                    class="text-danger">
+                    <p>Password must be at least 3 characters.</p>
+                </div>
+            </div>
+
+            <button type="submit" class="button-64" role="button"><span class="text">Login</span></button>
+        </form>
+        <div class="links"><a style="color: #fff; margin-top: 10px;" routerLink="/signup">Create New Account</a>
+            <a style="color: #fff; margin-top: 10px;" routerLink="/home">Continue as Guest</a>
+        </div>
+
+    </div>
+    <p class="coded-by">Coded by: <a href="https://www.linkedin.com/in/lucca-sa/" target="_blank">Lucca Sá</a></p>
+</div>
