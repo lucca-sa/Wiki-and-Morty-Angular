@@ -1,7 +1,8 @@
 <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
   <div class="container-fluid">
-    <a class="navbar-brand" routerLink="/"><span class="text-info">Wiki </span><span class="text-success">& </span><span
-        class="text-warning">Morty</span></a>
+
+    <a class="navbar-brand" routerLink="/home"><span class="text-info">Wiki </span><span class="text-success">&
+      </span><span class="text-warning">Morty</span></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
       aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -9,7 +10,7 @@
     <div class="collapse navbar-collapse" id="navbarCollapse">
       <ul class="navbar-nav me-auto mb-2 mb-md-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/">Home</a>
+          <a class="nav-link active" aria-current="page" href="/home">Home</a>
         </li>
         <li class="nav-item">
           <a class="nav-link secundary-link" href="/character-list">Character List</a>
@@ -18,8 +19,20 @@
           <a class="nav-link secundary-link" href="/location-list">Location List</a>
         </li>
 
+
       </ul>
 
     </div>
+    <div class="userbar" *ngIf="loggedInUserName$ | async as userName; else notLoggedIn">
+      <p id="userbar-text">Welcome, {{ userName }}!</p>
+      <button class="btn btn-danger logout-btn" (click)="onLogout()"><i class="bi bi-box-arrow-left"></i>Logout</button>
+    </div>
+    <ng-template #notLoggedIn>
+      <div class="userbar">
+        <p id="userbar-text">Login or Register now!</p>
+        <button (click)="onLogin()" class="btn btn-success logout-btn"><i
+            class="bi bi-box-arrow-left"></i>Login</button>
+      </div>
+    </ng-template>
   </div>
 </nav>

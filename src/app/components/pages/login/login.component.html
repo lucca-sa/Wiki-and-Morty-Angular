@@ -1,1 +1,25 @@
-<p>login works!</p>
+<div class="container">
+    <div class="card">
+        <div class="text-center">
+            <h2>Login</h2>
+            <h6>Please enter your email and password!</h6>
+        </div>
+
+        <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+            <div class="mb-3">
+                <label for="username-input" class="form-label">Username:</label>
+                <input formControlName="username" type="text" class="form-control" id="username-input"
+                    aria-describedby="emailHelp">
+
+            </div>
+            <div class="mb-3">
+                <label for="password-input" class="form-label">Password:</label>
+                <input formControlName="password" type="password" class="form-control" id="password-input">
+            </div>
+
+            <button type="submit" class="btn btn-primary">Login</button>
+        </form>
+        <a style="color: #fff; margin-top: 10px;" routerLink="/signup">Create New Account</a>
+        <a style="color: #fff; margin-top: 10px;" routerLink="/home">Continue as Guest</a>
+    </div>
+</div>

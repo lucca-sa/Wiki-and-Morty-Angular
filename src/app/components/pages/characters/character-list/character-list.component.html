@@ -1,40 +1,26 @@
+<app-header></app-header>
 <button (click)="onGoBack()" class="back-btn btn btn-primary btn-lg mt-3 mb-2">
   <i class="bi bi-arrow-left-short"></i>
   Back
 </button>
 <app-search-form [thisPage]="thisPage"></app-search-form>
-<div
-  infinite-scroll
-  (scrolled)="onScrollDown()"
-  class="row"
-  *ngIf="characters.length > 0; else notFound"
->
+<div infinite-scroll (scrolled)="onScrollDown()" class="row" *ngIf="characters.length > 0; else notFound">
   <div class="col-xs-12 col-sm-6 col-md-4" *ngFor="let character of characters">
     <div class="card card-details">
       <div class="image">
         <a [routerLink]="['/character-details', character.id]">
-          <img
-            [src]="character.image"
-            [alt]="character.name"
-            class="card-img-top"
-          />
+          <img [src]="character.image" [alt]="character.name" class="card-img-top" />
         </a>
       </div>
       <div class="card-inner">
         <div class="header">
-          <a
-            class="text-info"
-            [routerLink]="['/character-details', character.id]"
-          >
+          <a class="text-info" [routerLink]="['/character-details', character.id]">
             <h2>{{ character.name | slice : 0 : 25 }}</h2>
           </a>
           <h4>
             Status: <br />
             <div class="status">
-              <span
-                class="status-circle"
-                [ngClass]="getStatusCircleClass(character.status)"
-              ></span>
+              <span class="status-circle" [ngClass]="getStatusCircleClass(character.status)"></span>
               <span> {{ character.status | titlecase }}</span>
             </div>
           </h4>
@@ -47,17 +33,12 @@
     </div>
   </div>
 </div>
-<ng-template #notFound
-  ><div class="col-xs-12 col-sm-12 col-md-12 mt-5 container-notFound">
+<ng-template #notFound>
+  <div class="col-xs-12 col-sm-12 col-md-12 mt-5 container-notFound">
     <p class="no-results">No results...</p>
   </div>
 </ng-template>
-<button
-  [ngClass]="'no-hidden'"
-  *ngIf="showGoUpButton"
-  class="btn btn-dark"
-  (click)="onScrollUp()"
->
+<button [ngClass]="'no-hidden'" *ngIf="showGoUpButton" class="btn btn-dark" (click)="onScrollUp()">
   <i class="bi bi-arrow-up-circle"></i>
   Go UP
 </button>

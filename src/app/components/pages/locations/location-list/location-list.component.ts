@@ -104,6 +104,6 @@ export class LocationListComponent {
   }
 
   onGoBack(): void {
-    this.router.navigate(['/']);
+    this.router.navigate(['/home']);
   }
 }
