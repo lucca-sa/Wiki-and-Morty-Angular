@@ -7,9 +7,9 @@
       "id": 1
     },
     {
-      "username": "lucca-sa",
-      "email": "scherer.lucca@gmail.com",
-      "password": "1234",
+      "username": "admin",
+      "email": "admin@admin.com",
+      "password": "admin",
       "id": 2
     }
   ]
