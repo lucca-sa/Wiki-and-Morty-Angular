@@ -1,7 +1,14 @@
+.container {
+    display: flex;
+    justify-content: center;
+}
+
 .card {
 
     border: none;
-    width: 500px;
+    border-radius: 30px;
+    width: 80%;
+    max-width: 500px;
     padding: 40px;
     position: absolute;
     top: 50%;
@@ -14,6 +21,13 @@
 
 }
 
+.text-danger {
+    color: #dc3545;
+    margin-top: 0.4em;
+    border-left: 3px solid #dc3545;
+    padding-left: 0.2em;
+}
+
 .card,
 #emailHelp {
     color: #ffffff;
@@ -21,4 +35,8 @@
 
 #emailHelp {
     opacity: .6;
+}
+
+.button-64 {
+    margin: 0 auto;
 }

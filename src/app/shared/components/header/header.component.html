@@ -1,8 +1,7 @@
 <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
   <div class="container-fluid">
 
-    <a class="navbar-brand" routerLink="/home"><span class="text-info">Wiki </span><span class="text-success">&
-      </span><span class="text-warning">Morty</span></a>
+    <a href="/home"><img class="logo" src="../../../../assets/images/Wiki-and-Morty-logo.png" alt="logo"></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
       aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -24,7 +23,7 @@
 
     </div>
     <div class="userbar" *ngIf="loggedInUserName$ | async as userName; else notLoggedIn">
-      <p id="userbar-text">Welcome, {{ userName }}!</p>
+      <p id="userbar-text">Welcome, <span>{{ userName }}</span>!</p>
       <button class="btn btn-danger logout-btn" (click)="onLogout()"><i class="bi bi-box-arrow-left"></i>Logout</button>
     </div>
     <ng-template #notLoggedIn>

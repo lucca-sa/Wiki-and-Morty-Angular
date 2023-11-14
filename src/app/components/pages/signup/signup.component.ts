@@ -1,6 +1,6 @@
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
-import { Component } from '@angular/core';
-import { FormGroup, FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 import { User } from 'src/app/shared/Interfaces/user.interface';
 import { environment } from 'src/environments/environment.development';
@@ -10,7 +10,7 @@ import { environment } from 'src/environments/environment.development';
   templateUrl: './signup.component.html',
   styleUrls: ['./signup.component.scss'],
 })
-export class SignupComponent {
+export class SignupComponent implements OnInit {
   signupForm!: FormGroup;
 
   constructor(
@@ -21,24 +21,32 @@ export class SignupComponent {
 
   ngOnInit(): void {
     this.signupForm = this.formBuilder.group({
-      username: [''],
-      email: [''],
-      password: [''],
+      username: ['', [Validators.required, Validators.minLength(3)]],
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required, Validators.minLength(3)]],
     });
   }
 
+  get formControls() {
+    return this.signupForm.controls;
+  }
+
   createAccount() {
-    this.http
-      .post<User>(`${environment.signupMockUrl}`, this.signupForm.value)
-      .subscribe({
-        next: (res) => {
-          this.signupForm.reset();
-          alert('Sign Up Successfull');
-          this.router.navigate(['/login']);
-        },
-        error: (err) => {
-          alert('Something went wrong...');
-        },
-      });
+    if (this.signupForm.valid) {
+      this.http
+        .post<User>(`${environment.signupMockUrl}`, this.signupForm.value)
+        .subscribe({
+          next: (res) => {
+            this.signupForm.reset();
+            alert('Sign Up Successfully');
+            this.router.navigate(['/login']);
+          },
+          error: (err) => {
+            alert('Something went wrong...');
+          },
+        });
+    } else {
+      alert('Please fill out the form correctly.');
+    }
   }
 }

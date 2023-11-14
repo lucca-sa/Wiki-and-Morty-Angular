@@ -1,8 +1,10 @@
+<app-background-video></app-background-video>
 <div class="container">
+
     <div class="row">
         <div class="col-md-6">
             <div class="card">
-                <div class="text-center">
+                <div class="text-center mb-4">
                     <h2>Sign Up</h2>
                     <h6>Register your account!</h6>
                 </div>
@@ -11,24 +13,50 @@
                     <div class="mb-3">
                         <label for="InputUsername" class="form-label">Username:</label>
                         <input formControlName="username" type="text" class="form-control" id="InputUsername">
+                        <div *ngIf="formControls['username'].hasError('required') && (formControls['username'].dirty || formControls['username'].touched)"
+                            class="text-danger">
+                            <p>Username is required.</p>
+                        </div>
+                        <div *ngIf="formControls['username'].hasError('minlength') && (formControls['username'].dirty || formControls['username'].touched)"
+                            class="text-danger">
+                            <p>Username must be at least 3 characters.</p>
+                        </div>
                     </div>
 
                     <div class="mb-3">
                         <label for="InputEmail" class="form-label">Email address:</label>
                         <input formControlName="email" type="email" class="form-control" id="InputEmail"
                             aria-describedby="emailHelp">
+                        <div *ngIf="formControls['email'].hasError('required') && (formControls['email'].dirty || formControls['email'].touched)"
+                            class="text-danger">
+                            <p>Email is required.</p>
+                        </div>
+                        <div *ngIf="formControls['email'].hasError('email') && (formControls['email'].dirty || formControls['email'].touched)"
+                            class="text-danger">
+                            <p>Invalid email address.</p>
+                        </div>
                         <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
                     </div>
 
                     <div class="mb-3">
                         <label for="InputPassword" class="form-label">Password:</label>
                         <input formControlName="password" type="password" class="form-control" id="InputPassword">
+                        <div *ngIf="formControls['password'].hasError('required') && (formControls['password'].dirty || formControls['password'].touched)"
+                            class="text-danger">
+                            <p>Password is required.</p>
+                        </div>
+                        <div *ngIf="formControls['password'].hasError('minlength') && (formControls['password'].dirty || formControls['password'].touched)"
+                            class="text-danger">
+                            <p>Password must be at least 3 characters.</p>
+                        </div>
                     </div>
 
-                    <button type="submit" class="btn btn-primary">Sign Up</button>
+                    <button type="submit" class="button-64" role="button"><span class="text">Sign Up</span></button>
                 </form>
+
                 <a style="color: #fff; margin-top: 10px;" routerLink="/login">Log in with your account</a>
             </div>
         </div>
     </div>
+    <p class="coded-by">Coded by: <a href="https://www.linkedin.com/in/lucca-sa/" target="_blank">Lucca Sá</a></p>
 </div>
