@@ -40,3 +40,17 @@
 .button-64 {
     margin: 0 auto;
 }
+
+a {
+
+    &:hover {
+        opacity: .7;
+
+
+    }
+
+    &:active {
+
+        opacity: .5;
+    }
+}
