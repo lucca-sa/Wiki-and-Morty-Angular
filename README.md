@@ -10,20 +10,22 @@ Este guia passo a passo ajudará você a configurar e executar o projeto Rick & 
 Para verificar se a instalação foi bem-sucedida, abra o terminal e execute os seguintes comandos:
 
 `node -v`
+
 `npm -v`
 
 
 Ambos os comandos devem exibir as versões instaladas do Node.js e do npm.
 
-## Configuração do Projeto
+## Configurando e Rodando o Projeto
 
 Clone ou baixe o projeto do repositório.
+
+
+### Configurando o JSON Server para Emulação da API de Usuários
 
 Abra o terminal e navegue até a pasta raiz do projeto.
 
 > Nota: Você pode abrir o terminal diretamente na pasta de destino. No Windows, digite powershell na barra de endereços do Explorer. No Mac, abra o terminal e arraste a pasta para o terminal.
-
-## Configurando o JSON Server para Emulação da API de Usuários
 
 Execute o seguinte comando para iniciar o JSON Server e emular a API responsável por guardar informações do usuário para os sistemas de login e signup:
 
@@ -42,7 +44,6 @@ Se o JSON Server estiver usando uma porta diferente de 3000, edite o arquivo `sr
 Substitua `(porta_do_json_server)` pelo número da porta indicado pelo JSON Server.
 Essa alteração pode ser feita em um bloco de notas, notepad++ ou sua IDE de preferência.
 
-## Configurando o Ambiente Angular
 
 ### Iniciando o Servidor Angular
 
