@@ -5,7 +5,7 @@ Este guia passo a passo ajudará você a configurar e executar o projeto Rick & 
 ## Pré-requisitos
 
 - Antes de começar, certifique-se de ter o Node.js e o npm instalados.
-- Caso contrário, faça o download e a instalação a partir do site oficial do Node.js.
+- Caso contrário, faça o download e a instalação a partir do [site oficial do Node.js](https://nodejs.org/en/download).
 
 Para verificar se a instalação foi bem-sucedida, abra o terminal e execute os seguintes comandos:
 
