@@ -3,17 +3,8 @@ import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-search-form',
-  template: `
-    <input
-      type="text"
-      #searchInput
-      autofocus
-      class="form-control-lg"
-      placeholder="Search..."
-      (keyup)="onSearch(searchInput.value)"
-    />
-  `,
-  styles: ['input {width:100%;}'],
+  templateUrl: './search-form.component.html',
+  styleUrls: ['./search-form.component.scss'],
 })
 export class SearchFormComponent {
   @Input() thisPage!: string;
