@@ -19,7 +19,7 @@ Ambos os comandos devem exibir as versões instaladas do Node.js e do npm.
 
 Abra o terminal e navegue até a pasta raiz do projeto(recomenda-se o terminal integrado do VS Code).
 
-> Nota: Você pode abrir o terminal diretamente na pasta de destino. No Windows, digite powershell ou cmd na barra de endereços do  Windows Explorer. No Mac, abra o terminal e arraste a pasta para o terminal.
+> Nota: Você pode abrir o terminal diretamente na pasta de destino. Dentro da pasta raiz, no Windows, digite powershell ou cmd na barra de endereços do  Windows Explorer. No Mac, abra o terminal e arraste a pasta para o terminal.
 
 **Importante:** Se você estiver usando o cmd ou o PowerShell, é necessário abrir o terminal como administrador e executar o comando `Set-ExecutionPolicy RemoteSigned` antes de executar o projeto. Este passo é desnecessário se você estiver usando o terminal integrado de uma IDE como o VSCode.
 
