@@ -1,6 +1,6 @@
 # Wiki & Morty
 
-Este guia passo a passo ajudará você a configurar e executar o projeto Rick & Morty em sua máquina local.
+Este guia passo a passo ajudará você a configurar e executar o projeto Wiki & Morty em sua máquina local.
 
 ## Pré-requisitos
 
