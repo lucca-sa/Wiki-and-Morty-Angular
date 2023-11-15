@@ -1,3 +1,4 @@
+
 # Rick & Morty Project - Lucca Sá
 
 Este guia passo a passo ajudará você a configurar e executar o projeto Rick & Morty em sua máquina local.
@@ -13,13 +14,19 @@ Para verificar se a instalação foi bem-sucedida, abra o terminal e execute os 
 
 `npm -v`
 
-
 Ambos os comandos devem exibir as versões instaladas do Node.js e do npm.
 
 ## Configurando e Rodando o Projeto
 
-Clone ou baixe o projeto do repositório.
+Antes de começar, instale as dependências necessárias com os seguintes comandos:
 
+`npm i`
+
+`npm install -g @angular/cli`
+
+`npm install -g json-server`
+
+Clone ou baixe o projeto do repositório.
 
 ### Configurando o JSON Server para Emulação da API de Usuários
 
@@ -36,8 +43,8 @@ Verifique se o JSON Server está rodando na porta 3000. Se estiver usando uma po
 Se o JSON Server estiver usando uma porta diferente de 3000, edite o arquivo `src/environments/environment.development.ts` para refletir a porta correta:
 
  `export const environment = {
-  baseUrlAPI: 'https://rickandmortyapi.com/api/',
-  signupMockUrl: 'http://localhost:(porta_do_json_server)/users',
+ baseUrlAPI: 'https://rickandmortyapi.com/api/',
+ signupMockUrl: 'http://localhost:(porta_do_json_server)/users',
 };`
 
 
@@ -59,4 +66,3 @@ O aplicativo estará acessível em http://localhost:4200 por padrão. Abra o nav
 Agora, você configurou e iniciou o projeto Rick & Morty em sua máquina local, incluindo a emulação da API de usuários com o JSON Server.
 
 Se precisar de mais assistência ou encontrar problemas, consulte a documentação oficial do [Angular](url) e do [JSON Server](url) para obter informações adicionais.
-
