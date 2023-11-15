@@ -23,7 +23,7 @@ Abra o terminal e navegue até a pasta raiz do projeto(recomenda-se o terminal i
 
 **Importante:** Se você estiver usando o cmd ou o PowerShell, é necessário abrir o terminal como administrador e executar o comando `Set-ExecutionPolicy RemoteSigned` antes de executar o projeto. Este passo é desnecessário se você estiver usando o terminal integrado de uma IDE como o VSCode.
 
-Antes de começar, instale as dependências necessárias com os seguintes comandos:
+Instale as dependências necessárias com os seguintes comandos:
 
 `npm i`
 
