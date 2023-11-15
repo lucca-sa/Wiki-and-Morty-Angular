@@ -39,7 +39,7 @@ Execute o seguinte comando para iniciar o JSON Server e emular a API responsáve
 
 Verifique se o JSON Server está rodando na porta 3000 e mantenha esse terminal aberto. Se estiver usando uma porta diferente, anote o número da porta.
 
-Se o JSON Server estiver usando uma porta diferente de 3000, edite o arquivo `src/environments/environment.development.ts` para refletir a porta correta:
+Apenas se o JSON Server estiver usando uma porta diferente de 3000, edite o arquivo `src/environments/environment.development.ts` para refletir a porta correta:
 
  `export const environment = {
  baseUrlAPI: 'https://rickandmortyapi.com/api/',
