@@ -1,22 +1,3 @@
 {
-  "users": [
-    {
-      "username": "teste",
-      "email": "test@gmail.com",
-      "password": "1234",
-      "id": 1
-    },
-    {
-      "username": "admin",
-      "email": "admin@admin.com",
-      "password": "admin",
-      "id": 2
-    },
-    {
-      "username": "rick",
-      "email": "rick@gmail.com",
-      "password": "1234",
-      "id": 3
-    }
-  ]
+  "users": []
 }
