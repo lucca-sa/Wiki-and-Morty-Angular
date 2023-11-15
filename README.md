@@ -17,6 +17,12 @@ Ambos os comandos devem exibir as versões instaladas do Node.js e do npm.
 
 ## Configurando e Rodando o Projeto
 
+Abra o terminal e navegue até a pasta raiz do projeto(recomenda-se o terminal integrado do VS Code).
+
+> Nota: Você pode abrir o terminal diretamente na pasta de destino. No Windows, digite powershell ou cmd na barra de endereços do  Windows Explorer. No Mac, abra o terminal e arraste a pasta para o terminal.
+
+**Importante:** Se você estiver usando o cmd ou o PowerShell, é necessário abrir o terminal como administrador e executar o comando `Set-ExecutionPolicy RemoteSigned` antes de executar o projeto. Este passo é desnecessário se você estiver usando o terminal integrado de uma IDE como o VSCode.
+
 Antes de começar, instale as dependências necessárias com os seguintes comandos:
 
 `npm i`
@@ -25,21 +31,13 @@ Antes de começar, instale as dependências necessárias com os seguintes comand
 
 `npm install -g json-server`
 
-Clone ou baixe o projeto do repositório.
-
 ### Configurando o JSON Server para Emulação da API de Usuários
-
-Abra o terminal e navegue até a pasta raiz do projeto(recomenda-se o terminal integrado do VS Code).
-
-> Nota: Você pode abrir o terminal diretamente na pasta de destino. No Windows, digite powershell na barra de endereços do Explorer. No Mac, abra o terminal e arraste a pasta para o terminal.
-
-**Importante:** Se você estiver usando o cmd ou o PowerShell, é necessário executar o comando `Set-ExecutionPolicy RemoteSigned` como administrador antes de executar o projeto. Este passo é desnecessário se você estiver usando o terminal integrado de uma IDE como o VSCode.
 
 Execute o seguinte comando para iniciar o JSON Server e emular a API responsável por guardar informações do usuário para os sistemas de login e signup:
 
 `json-server --watch database/user_db.json`
 
-Verifique se o JSON Server está rodando na porta 3000. Se estiver usando uma porta diferente, anote o número da porta.
+Verifique se o JSON Server está rodando na porta 3000 e mantenha esse terminal aberto. Se estiver usando uma porta diferente, anote o número da porta.
 
 Se o JSON Server estiver usando uma porta diferente de 3000, edite o arquivo `src/environments/environment.development.ts` para refletir a porta correta:
 
