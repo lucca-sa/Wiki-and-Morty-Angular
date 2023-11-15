@@ -1,9 +1,8 @@
+import { Location as AngularLocation } from '@angular/common';
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Location as AngularLocation } from '@angular/common';
 
-import { take } from 'rxjs';
-import { Observable } from 'rxjs';
+import { Observable, take } from 'rxjs';
 import { Location } from 'src/app/shared/Interfaces/location.interface';
 import { LocationService } from 'src/app/shared/services/location.service';
 

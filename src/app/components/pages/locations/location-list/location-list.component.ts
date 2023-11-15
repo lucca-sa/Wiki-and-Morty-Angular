@@ -1,3 +1,4 @@
+import { DOCUMENT } from '@angular/common';
 import { Component, HostListener, Inject } from '@angular/core';
 import {
   ActivatedRoute,
@@ -5,11 +6,10 @@ import {
   ParamMap,
   Router,
 } from '@angular/router';
-import { DOCUMENT } from '@angular/common';
 
+import { filter, take } from 'rxjs';
 import { Location } from 'src/app/shared/Interfaces/location.interface';
 import { LocationService } from 'src/app/shared/services/location.service';
-import { filter, take } from 'rxjs';
 
 type RequestInfo = {
   next: string | null;

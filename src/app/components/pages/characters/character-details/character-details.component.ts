@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
-import { take } from 'rxjs';
-import { Observable } from 'rxjs';
+import { Observable, take } from 'rxjs';
 import { Character } from 'src/app/shared/Interfaces/character.interface';
 import { CharacterService } from 'src/app/shared/services/character.service';
 

@@ -1,8 +1,8 @@
-import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
 
-import { Location } from '../Interfaces/location.interface';
 import { environment } from 'src/environments/environment';
+import { Location } from '../Interfaces/location.interface';
 
 @Injectable({
   providedIn: 'root',

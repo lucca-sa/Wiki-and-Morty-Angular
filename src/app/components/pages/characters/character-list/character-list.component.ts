@@ -1,3 +1,4 @@
+import { DOCUMENT } from '@angular/common';
 import { Component, HostListener, Inject } from '@angular/core';
 import {
   ActivatedRoute,
@@ -5,11 +6,10 @@ import {
   ParamMap,
   Router,
 } from '@angular/router';
-import { DOCUMENT } from '@angular/common';
 
+import { filter, take } from 'rxjs';
 import { Character } from 'src/app/shared/Interfaces/character.interface';
 import { CharacterService } from 'src/app/shared/services/character.service';
-import { filter, take } from 'rxjs';
 
 type RequestInfo = {
   next: string | null;
