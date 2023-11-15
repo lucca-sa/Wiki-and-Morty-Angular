@@ -8,11 +8,18 @@ import { Router } from '@angular/router';
 })
 export class SearchFormComponent {
   @Input() thisPage!: string;
+
   constructor(private router: Router) {}
 
   onSearch(value: string) {
     this.router.navigate([`/${this.thisPage}-list`], {
       queryParams: { q: value },
     });
+  }
+
+  onInputChange(value: string) {
+    if (value.trim() === '') {
+      this.router.navigate([`/${this.thisPage}-list`]);
+    }
   }
 }

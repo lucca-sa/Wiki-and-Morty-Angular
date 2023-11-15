@@ -1,10 +1,9 @@
 <div class="form-group">
     <div class="input-container">
         <input type="text" #searchInput autofocus class="form-control-lg" placeholder="Search..."
-            (keyup.enter)="onSearch(searchInput.value)" />
+            (keyup.enter)="onSearch(searchInput.value)" (input)="onInputChange(searchInput.value)" />
         <button class="" type="button button-85" (click)="onSearch(searchInput.value)">
             <i class="bi bi-search"></i>
         </button>
-
     </div>
 </div>
