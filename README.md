@@ -21,7 +21,7 @@ Abra o terminal e navegue até a pasta raiz do projeto(recomenda-se o terminal i
 
 > Nota: Você pode abrir o terminal diretamente na pasta de destino. Dentro da pasta raiz, no Windows, digite powershell ou cmd na barra de endereços do  Windows Explorer. No Mac, abra o terminal e arraste a pasta para o terminal.
 
-**Importante:** Se você estiver usando o cmd ou o PowerShell, é necessário abri-lo como administrador e executar o comando `Set-ExecutionPolicy RemoteSigned` antes de executar o projeto. Este passo não é necessário se você estiver usando o terminal integrado de uma IDE como o VSCode. Esse comando permite que os scripts sejam executados, desde que eles estejam assinados por um editor confiável ou sejam criados localmente.
+**Importante:** Se você estiver usando o cmd ou o PowerShell, é necessário abri-lo como administrador e executar o comando `Set-ExecutionPolicy RemoteSigned` antes de executar o projeto. Esse comando permite que os scripts sejam executados, desde que eles estejam assinados por um editor confiável ou sejam criados localmente. Este passo não é necessário se você estiver usando o terminal integrado de uma IDE como o VSCode.
 
 Instale as dependências necessárias com os seguintes comandos:
 
