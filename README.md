@@ -1,5 +1,4 @@
-
-# Rick & Morty Project - Lucca Sá
+# Wiki & Morty
 
 Este guia passo a passo ajudará você a configurar e executar o projeto Rick & Morty em sua máquina local.
 
@@ -30,9 +29,11 @@ Clone ou baixe o projeto do repositório.
 
 ### Configurando o JSON Server para Emulação da API de Usuários
 
-Abra o terminal e navegue até a pasta raiz do projeto.
+Abra o terminal e navegue até a pasta raiz do projeto(recomenda-se o terminal integrado do VS Code).
 
 > Nota: Você pode abrir o terminal diretamente na pasta de destino. No Windows, digite powershell na barra de endereços do Explorer. No Mac, abra o terminal e arraste a pasta para o terminal.
+
+**Importante:** Se você estiver usando o cmd ou o PowerShell, é necessário executar o comando `Set-ExecutionPolicy RemoteSigned` como administrador antes de executar o projeto. Este passo é desnecessário se você estiver usando o terminal integrado de uma IDE como o VSCode.
 
 Execute o seguinte comando para iniciar o JSON Server e emular a API responsável por guardar informações do usuário para os sistemas de login e signup:
 
@@ -47,10 +48,8 @@ Se o JSON Server estiver usando uma porta diferente de 3000, edite o arquivo `sr
  signupMockUrl: 'http://localhost:(porta_do_json_server)/users',
 };`
 
-
 Substitua `(porta_do_json_server)` pelo número da porta indicado pelo JSON Server.
 Essa alteração pode ser feita em um bloco de notas, notepad++ ou sua IDE de preferência.
-
 
 ### Iniciando o Servidor Angular
 
@@ -60,9 +59,8 @@ Execute o seguinte comando para iniciar o servidor Angular:
 
 `ng serve`
 
-
 O aplicativo estará acessível em http://localhost:4200 por padrão. Abra o navegador e vá para http://localhost:4200 para interagir com o projeto Rick & Morty.
 
 Agora, você configurou e iniciou o projeto Rick & Morty em sua máquina local, incluindo a emulação da API de usuários com o JSON Server.
 
-Se precisar de mais assistência ou encontrar problemas, consulte a documentação oficial do [Angular](url) e do [JSON Server](url) para obter informações adicionais.
+Se precisar de mais assistência ou encontrar problemas, consulte a documentação oficial do [Angular](https://angular.io/docs) e do [JSON Server](https://www.npmjs.com/package/json-server) para obter informações adicionais.
