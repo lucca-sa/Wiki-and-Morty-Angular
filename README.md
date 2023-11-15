@@ -57,7 +57,7 @@ Execute o seguinte comando para iniciar o servidor Angular:
 
 `ng serve`
 
-O aplicativo estará acessível em http://localhost:4200 por padrão. Abra o navegador e vá para http://localhost:4200 para interagir com o projeto Rick & Morty.
+O aplicativo estará acessível em http://localhost:4200 por padrão, mas isso pode variar. Quando você executar o comando ng serve, o Angular CLI irá indicar a porta real usada. Abra o navegador e vá para http://localhost:(porta_indicada) para interagir com o projeto Rick & Morty.
 
 Agora, você configurou e iniciou o projeto Rick & Morty em sua máquina local, incluindo a emulação da API de usuários com o JSON Server.
 
