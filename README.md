@@ -17,7 +17,7 @@ Ambos os comandos devem exibir as versões instaladas do Node.js e do npm.
 
 ## Configurando e Rodando o Projeto
 
-Abra o terminal e navegue até a pasta raiz do projeto(recomenda-se o terminal integrado do VS Code).
+Abra o terminal e navegue até a pasta raiz do projeto(recomenda-se o terminal integrado do VSCode).
 
 > Nota: Você pode abrir o terminal diretamente na pasta de destino. Dentro da pasta raiz, no Windows, digite powershell ou cmd na barra de endereços do  Windows Explorer. No Mac, abra o terminal e arraste a pasta para o terminal.
 
