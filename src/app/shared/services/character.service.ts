@@ -1,8 +1,8 @@
-import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
 
-import { Character } from '../Interfaces/character.interface';
 import { environment } from 'src/environments/environment';
+import { Character } from '../Interfaces/character.interface';
 
 @Injectable({
   providedIn: 'root',
