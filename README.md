@@ -25,7 +25,7 @@ Abra o terminal e navegue até a pasta raiz do projeto:
 
 > Caso você esteja com a pasta aberta, você pode abrir o terminal diretamente na pasta de destino.
 
->No Windows, digite powershell ou cmd na barra de endereços do  Windows Explorer e aperte a tecla "Enter". 
+> No Windows, digite powershell ou cmd na barra de endereços do  Windows Explorer e aperte a tecla "Enter". 
 ![Demonstração](https://i.imgur.com/0QtyqCW.png)
 
 > No Mac, abra o terminal e arraste a pasta para o terminal.
