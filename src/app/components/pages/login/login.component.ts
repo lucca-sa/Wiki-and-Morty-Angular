@@ -24,6 +24,7 @@ export class LoginComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    // Inicializa o formulário de login com validadores
     this.loginForm = this.formBuilder.group({
       username: ['', [Validators.required, Validators.minLength(3)]],
       password: ['', [Validators.required, Validators.minLength(3)]],
@@ -36,16 +37,22 @@ export class LoginComponent implements OnInit {
   }
 
   onLogin() {
+    // Verifica se o formulário é válido
     if (this.loginForm.valid) {
+      // Faz uma chamada HTTP para obter usuários mockados (simulado)
       this.http.get<any[]>(environment.signupMockUrl).subscribe((users) => {
+        // Encontra o usuário ativo com base no nome de usuário e senha fornecidos
         this.activeUser = users.find(
           (user) =>
             user.username === this.loginForm.value.username &&
             user.password === this.loginForm.value.password
         );
 
+        // Se o usuário ativo for encontrado
         if (this.activeUser) {
+          // Armazena o nome do usuário ativo no armazenamento local
           localStorage.setItem('activeUser', this.activeUser.username);
+          // Atualiza o nome do usuário logado no serviço UserService
           this.userService.updateLoggedInUserName(this.activeUser.username);
 
           alert('Login Successfully');
@@ -61,7 +68,9 @@ export class LoginComponent implements OnInit {
   }
 
   onLogOut() {
+    // Remove o usuário ativo do armazenamento local
     localStorage.removeItem('activeUser');
+    // Atualiza o nome do usuário logado no serviço UserService para nulo
     this.userService.updateLoggedInUserName(null);
 
     this.router.navigate(['/login']);

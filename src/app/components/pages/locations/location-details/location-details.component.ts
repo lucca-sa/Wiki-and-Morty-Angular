@@ -21,8 +21,11 @@ export class LocationDetailsComponent {
   ) {}
 
   ngOnInit(): void {
+    // Obtém os parâmetros da rota
     this.route.params.pipe(take(1)).subscribe((params) => {
+      // Extrai o ID do parâmetro
       const id = params['id'];
+      // Chama o serviço para obter os detalhes da localização
       this.location$ = this.locationService.getDetails(id);
     });
   }

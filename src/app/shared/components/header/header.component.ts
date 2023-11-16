@@ -10,6 +10,7 @@ import { UserService } from '../../services/user.service';
 export class HeaderComponent implements OnInit {
   constructor(private router: Router, private userService: UserService) {}
 
+  // Getter para obter o nome de usuário logado do serviço de usuário
   get loggedInUserName$() {
     return this.userService.loggedInUserName$;
   }
@@ -29,6 +30,7 @@ export class HeaderComponent implements OnInit {
   }
 
   onLogout() {
+    // Remove o nome de usuário armazenado localmente e atualiza o serviço de usuário
     localStorage.removeItem('activeUser');
     this.userService.updateLoggedInUserName(null);
     this.router.navigate(['/login']);

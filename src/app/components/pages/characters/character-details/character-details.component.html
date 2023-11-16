@@ -32,7 +32,7 @@
 
           <a *ngIf="character.origin.name !== 'unknown'" [routerLink]="[
               '/location-details',
-              extrairNumeroDoLink(character.origin.url)
+              extractNumberFromLink(character.origin.url)
             ]">
             <h4>
               Origin: <br />
@@ -47,7 +47,7 @@
 
           <a *ngIf="character.location.name !== 'unknown'" [routerLink]="[
               '/location-details',
-              extrairNumeroDoLink(character.location.url)
+              extractNumberFromLink(character.location.url)
             ]">
             <h4>
               Last known location: <br />

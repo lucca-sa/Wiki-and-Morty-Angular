@@ -23,6 +23,7 @@ export class SignupComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    // Inicializa o formulário de cadastro com validadores
     this.signupForm = this.formBuilder.group({
       username: ['', [Validators.required, Validators.minLength(3)]],
       email: ['', [Validators.required, Validators.email]],
@@ -30,10 +31,12 @@ export class SignupComponent implements OnInit {
     });
   }
 
+  // Getter para facilitar o acesso aos controles do formulário
   get formControls() {
     return this.signupForm.controls;
   }
 
+  // Método para verificar a disponibilidade de um nome de usuário
   checkUsernameAvailability(username: string): Observable<boolean> {
     const url = `${environment.signupMockUrl}?username=${username}`;
 
@@ -44,12 +47,16 @@ export class SignupComponent implements OnInit {
   }
 
   createAccount() {
+    // Verifica se o formulário é válido
     if (this.signupForm.valid) {
       const username = this.signupForm.value.username;
 
+      // Verifica a disponibilidade do nome de usuário
       this.checkUsernameAvailability(username).subscribe({
         next: (isAvailable) => {
+          // Se o nome de usuário estiver disponível
           if (isAvailable) {
+            // Faz uma chamada HTTP para criar a conta do usuário
             this.http
               .post<User>(environment.signupMockUrl, this.signupForm.value)
               .subscribe({
