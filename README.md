@@ -19,16 +19,20 @@ Para verificar se a instalação foi bem-sucedida, abra um terminal e execute os
 Ambos os comandos devem exibir as versões instaladas do Node.js e do npm.
 
 ## Configurando e Rodando o Projeto
+**Importante:** Se você estiver usando o Cmd ou o PowerShell, é necessário abrir o PowerShell como administrador e executar o comando `Set-ExecutionPolicy RemoteSigned` antes de executar o projeto. Esse comando permite que os scripts sejam executados, desde que eles estejam assinados por um editor confiável ou sejam criados localmente.
 
-Abra o terminal e navegue até a pasta raiz do projeto.
+Abra o terminal e navegue até a pasta raiz do projeto:
 
-> Nota: Você pode abrir o terminal diretamente na pasta de destino. Dentro da pasta raiz, no Windows, digite powershell ou cmd na barra de endereços do  Windows Explorer. No Mac, abra o terminal e arraste a pasta para o terminal.
+> Caso você esteja com a pasta aberta, você pode abrir o terminal diretamente na pasta de destino.
 
-**Importante:** Se você estiver usando o cmd ou o PowerShell, é necessário abri-lo como administrador e executar o comando `Set-ExecutionPolicy RemoteSigned` antes de executar o projeto. Esse comando permite que os scripts sejam executados, desde que eles estejam assinados por um editor confiável ou sejam criados localmente.
+>No Windows, digite powershell ou cmd na barra de endereços do  Windows Explorer e aperte a tecla "Enter". 
+![Demonstração](https://i.imgur.com/0QtyqCW.png)
+
+> No Mac, abra o terminal e arraste a pasta para o terminal.
 
 Instale as dependências necessárias com os seguintes comandos:
 
-Caso não tenha o Angular instalado: `npm install -g @angular/cli`
+`npm install -g @angular/cli`(Caso não tenha o Angular instalado)
 
 `npm install -g json-server`
 
@@ -58,7 +62,7 @@ Abra um novo terminal na mesma pasta do projeto.
 
 Execute o seguinte comando para iniciar o servidor Angular:
 
-`ng serve`
+`ng serve` ou em caso de erro: `npm start`
 
 O aplicativo estará acessível em http://localhost:4200 por padrão, mas isso pode variar. Quando você executar o comando ng serve, o Angular CLI irá indicar a porta real usada. Abra o navegador e vá para http://localhost:(porta_indicada) para interagir com o projeto Rick & Morty.
 
